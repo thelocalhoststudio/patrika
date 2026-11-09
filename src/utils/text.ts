@@ -17,7 +17,8 @@ export function formatSeriesTitle(slug: string): string {
     .replace(/\b\w/g, c => c.toUpperCase());
 }
 
-export function formatDate(date: Date): string {
+export function formatDate(date?: Date): string {
+  if (!date) return '';
   return date.toLocaleDateString('en-IN', {
     day:   '2-digit',
     month: 'short',
@@ -25,7 +26,8 @@ export function formatDate(date: Date): string {
   })
 }
 
-export function formatMonthYear(date: Date): string {
+export function formatMonthYear(date?: Date): string {
+  if (!date) return '';
   return date.toLocaleDateString('en-IN', {
     month: 'short',
     year:  'numeric',
